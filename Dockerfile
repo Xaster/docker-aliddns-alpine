@@ -11,6 +11,7 @@ RUN apk upgrade --no-cache \
         grep -o '/upx-[a-zA-Z0-9.]*-amd64_linux[.]tar[.]xz' | \
         sed -e 's~^/upx-~~' -e 's~\-amd64_linux\.tar\.xz$~~' | \
         sed '/alpha.*/Id' | \
+        sed '/pre.*/Id' | \
         sed '/beta.*/Id' | \
         sed '/rc.*/Id' | \
         sort -t '.' -k 1,1 -k 2,2 -k 3,3 -k 4,4 -g | \
