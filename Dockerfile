@@ -1,7 +1,6 @@
 FROM golang:alpine as build
 
-RUN cd \
-    && apk upgrade --no-cache \
+RUN apk upgrade --no-cache \
     && apk add --no-cache --virtual .build-deps \
         git \
         curl \
@@ -29,7 +28,8 @@ RUN cd \
         xargs upx \
     && apk del .build-deps \
     && rm -rf \
-        $HOME/* \
+        upx-${UPX_VERSION}-amd64_linux.tar \
+        upx-${UPX_VERSION}-amd64_linux \
         /bin/upx \
         /go/src/* \
         /go/pkg/*
