@@ -20,8 +20,8 @@ COPY --from=build /go/bin /usr/bin
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache tzdata \
-    && wget --no-check-certificate -O /usr/bin/Run.sh https://raw.githubusercontent.com/Xaster/docker-aliddns-alpine/master/Run.sh \
-    && chmod +x /usr/bin/Run.sh
+    && wget --no-check-certificate -O /usr/bin/CMD-Shell https://raw.githubusercontent.com/Xaster/docker-aliddns-alpine/master/CMD-Shell \
+    && chmod +x /usr/bin/CMD-Shell
 
 ENV AKID="" \
     AKSCT="" \
@@ -30,4 +30,4 @@ ENV AKID="" \
     REDO=600 \
     TIMEZONE=""
 
-CMD "/usr/bin/Run.sh"
+CMD "CMD-Shell"
