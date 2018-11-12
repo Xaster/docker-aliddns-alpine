@@ -30,4 +30,4 @@ ENV AKID="" \
     REDO=600 \
     TIMEZONE=""
 
-CMD "CMD-Shell"
+CMD ["CMD-Shell"]
