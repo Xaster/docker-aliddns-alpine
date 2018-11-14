@@ -1,4 +1,4 @@
-FROM golang:alpine as build
+FROM golang:alpine AS build
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache --virtual .build-deps \
