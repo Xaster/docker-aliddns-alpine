@@ -20,7 +20,7 @@ COPY --from=build /go/bin /usr/bin
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache tzdata \
-    && wget --no-check-certificate -O /usr/bin/CMD-Shell https://raw.githubusercontent.com/Xaster/docker-aliddns-alpine/master/CMD-Shell \
+    && wget -O /usr/bin/CMD-Shell https://raw.githubusercontent.com/Xaster/docker-aliddns-alpine/master/CMD-Shell \
     && chmod +x /usr/bin/CMD-Shell
 
 ENV AKID="" \
